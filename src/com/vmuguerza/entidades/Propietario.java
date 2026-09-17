@@ -50,5 +50,13 @@ public class Propietario {
         return mascotas;
     }
 
+    public void agregarMascota(Mascota mascota){
+        // Validaciones
+        if(mascota != null && !mascotas.contains(mascota)){
+            mascotas.add(mascota);
+            mascota.setPropietario(this);
+        }
+    }
+
     
 }
