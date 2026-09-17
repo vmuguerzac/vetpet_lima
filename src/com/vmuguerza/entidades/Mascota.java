@@ -1,5 +1,8 @@
 package com.vmuguerza.entidades;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Mascota {
     private int idMascota;
     private String nombre;
@@ -7,9 +10,10 @@ public class Mascota {
     private String raza;
     private int edad;
     private Propietario propietario; // relacion con Propietario
+    private List<Cita> citas;
 
     public Mascota(){
-        // Constructor vacio
+        this.citas = new ArrayList<>();
     }
 
     public Mascota(int idMascota, String nombre, String especie, String raza, int edad) {
@@ -18,6 +22,7 @@ public class Mascota {
         this.especie = especie;
         this.raza = raza;
         this.edad = edad;
+        this.citas = new ArrayList<>();
     }
 
     public int getIdMascota() {
@@ -66,6 +71,17 @@ public class Mascota {
 
     public void setPropietario(Propietario propietario) {
         this.propietario = propietario;
+    }
+
+    public List<Cita> getHistorial(){
+        return citas;
+    }
+
+    public void agregarCita(Cita cita){
+        if(cita != null && citas.contains(cita)){
+            citas.add(cita);
+            cita.setMascota(this);
+        }
     }
 
     

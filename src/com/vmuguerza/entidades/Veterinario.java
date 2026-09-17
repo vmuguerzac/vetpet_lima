@@ -72,7 +72,7 @@ public class Veterinario {
         // Validaciones
         if(cita != null && !citas.contains(cita)){
             citas.add(cita);
-            // Agregar el veterinario a la cita
+            cita.setVeterinario(this);
         }
     }
 

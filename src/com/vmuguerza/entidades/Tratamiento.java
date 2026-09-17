@@ -53,7 +53,7 @@ public class Tratamiento {
     public void agregarCita(Cita cita){
         if(cita != null && !citas.contains(cita)){
             citas.add(cita);
-            // establecer en la cita el tratamientp
+            cita.setTratamiento(this);
         }
     }
 }
