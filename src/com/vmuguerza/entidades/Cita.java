@@ -7,6 +7,7 @@ public class Cita {
     private Date fecha;
     private String motivo;
     private String estado;
+    private String diagnostico;
     private Mascota mascota; // relacion con clase mascota
     private Veterinario veterinario; // relacion con veterinario
     private Tratamiento tratamiento; // relacion con tratamiento
@@ -65,6 +66,13 @@ public class Cita {
     }
     public void setTratamiento(Tratamiento tratamiento) {
         this.tratamiento = tratamiento;
+    }
+
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+    public String getDiagnostico() {
+        return diagnostico;
     }
 
     public void confirmar(){

@@ -60,7 +60,11 @@ public class Veterinario {
     }
 
     public void emitirDiagnostico(int idCita){
-        System.out.println("Se emitio el diagnotico para la cita: " + idCita);
+        for (Cita cita : citas){
+            if(cita.getIdCita() == idCita){
+                System.out.println("El Dr ha emitido el tratamiento para la cita: " + idCita);
+            }
+        }
     }
 
     // metodos asociados a la relacion con Cita
